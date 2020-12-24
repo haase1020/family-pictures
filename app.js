@@ -1,5 +1,5 @@
-import fetchFollowers from "./fetchFollowers.js";
-import displayFollowers from "./displayFollowers.js";
+import fetchDogs from "./fetchDogs.js";
+import displayDogs from "./displayDogs.js";
 import paginate from "./paginate.js";
 import displayButtons from "./displayButtons.js";
 
@@ -10,14 +10,14 @@ let index = 0;
 let pages = [];
 
 const setupUI = () => {
-  displayFollowers(pages[index]);
+  displayDogs(pages[index]);
   displayButtons(btnContainer, pages, index);
 };
 
 const init = async () => {
-  const followers = await fetchFollowers();
-  title.textContent = "Haase Family Pictures";
-  pages = paginate(followers);
+  const dogs = await fetchDogs();
+  title.textContent = "Bulldogs Rock!";
+  pages = paginate(dogs);
   setupUI();
 };
 

@@ -1,12 +1,12 @@
-const paginate = (followers) => {
-  const itemsPerPage = 4;
-  const numberOfPages = Math.ceil(followers.length / itemsPerPage);
+const paginate = (dogs) => {
+  const itemsPerPage = 12;
+  const numberOfPages = Math.ceil(dogs.length / itemsPerPage);
   console.log(numberOfPages);
-  const newFollowers = Array.from({ length: numberOfPages }, (_, index) => {
+  const newDogs = Array.from({ length: numberOfPages }, (_, index) => {
     const start = index * itemsPerPage;
-    return followers.slice(start, start + itemsPerPage);
+    return dogs.slice(start, start + itemsPerPage);
   });
-  return newFollowers;
+  return newDogs;
 };
 
 export default paginate;
